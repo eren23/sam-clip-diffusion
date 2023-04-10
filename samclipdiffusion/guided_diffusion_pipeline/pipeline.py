@@ -94,15 +94,15 @@ class SamClipDiffusion:
     def _get_indices_of_values_above_threshold(self, values, threshold):
         return [i for i, v in enumerate(values) if v > threshold]
     
-    def segmentation_pipeline(self, image_path):
+    def segmentation_pipeline(self, image_path, target, threshold=0.05):
         self.image_path = image_path
         
         self._get_mask_generator()
         self._generate_masks(image_path)
         self._cut_all_masks(image_path)
         
-        scores = self._retrieve(self.cropped_boxes, "poodle")
-        indices = self._get_indices_of_values_above_threshold(scores, 0.05)
+        scores = self._retrieve(self.cropped_boxes, target)
+        indices = self._get_indices_of_values_above_threshold(scores, threshold)
 
         segmentation_masks = []
 
