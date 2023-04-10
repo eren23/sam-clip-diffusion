@@ -12,8 +12,8 @@ setup(
         'torch',
         'opencv-python',
         'Pillow',
-        'clip @ git+https://github.com/openai/CLIP.git',
-        'segment_anything @ git+https://github.com/facebookresearch/segment-anything.git',
+        # 'clip @ git+https://github.com/openai/CLIP.git',
+        # 'segment_anything @ git+https://github.com/facebookresearch/segment-anything.git',
         'diffusers',
         'transformers',
         'accelerate'
