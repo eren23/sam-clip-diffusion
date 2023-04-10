@@ -48,7 +48,7 @@ class SamClipDiffusion:
         y2 = box[1] + box[3]
         return [x1, y1, x2, y2]
     
-    def _segment_image(image, segmentation_mask):
+    def _segment_image(self,image, segmentation_mask):
         image_array = np.array(image)
         segmented_image_array = np.zeros_like(image_array)
         segmented_image_array[segmentation_mask] = image_array[segmentation_mask]
@@ -100,6 +100,7 @@ class SamClipDiffusion:
         self._get_mask_generator()
         self._generate_masks(image_path)
         self._cut_all_masks(image_path)
+        self._load_clip()
         
         scores = self._retrieve(self.cropped_boxes, target)
         indices = self._get_indices_of_values_above_threshold(scores, threshold)
