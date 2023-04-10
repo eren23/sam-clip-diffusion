@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-from samclipdiffusion import __version__
 
 setup(
     name='samclipdiffusion',
@@ -8,13 +7,13 @@ setup(
     author='Eren Akbulut',
     author_email='erenakbulutwork@gmail.com',
     url='https://github.com/eren23/sam-clip-diffusion',
-    packages=['samclipdiffusion', 'samclipdiffusion.guided_diffusion_pipeline'],
+    packages=find_packages(),
     install_requires=[
         'torch',
         'opencv-python',
         'Pillow',
-        'git+https://github.com/openai/CLIP.git',
-        'git+https://github.com/facebookresearch/segment-anything.git',
+        'clip @ git+https://github.com/openai/CLIP.git',
+        'segment_anything @ git+https://github.com/facebookresearch/segment-anything.git',
         'diffusers',
         'transformers',
         'accelerate'
