@@ -2,8 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='samclipdiffusion',
-    version='0.0.1b',
+    version='0.0.2b',
     description='A package for clip-guided diffusion',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     author='Eren Akbulut',
     author_email='erenakbulutwork@gmail.com',
     url='https://github.com/eren23/sam-clip-diffusion',
