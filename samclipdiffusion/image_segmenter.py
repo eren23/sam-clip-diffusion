@@ -100,7 +100,7 @@ class ImageSegmenter:
         prompt,
         num_inference_steps=50,
         negative_prompt=None,
-        guide_image=7.5,
+        guidance_scale=7.5,
     ):
         from PIL import ImageChops, ImageFilter
         from scipy import ndimage
